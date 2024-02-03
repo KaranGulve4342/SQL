@@ -156,8 +156,15 @@ WHERE rollno IN (SELECT rollno
 				FROM friends
 				WHERE rollno%2 = 0);
 
+SELECT max(marks)
+FROM (SELECT * FROM friends WHERE city = "Delhi") AS  temp;
 
+SELECT max(marks)
+FROM friends
+WHERE city = "Delhi";
 
+SELECT (SELECT max(marks) FROM friends), name
+FROM student;
 
 
 
